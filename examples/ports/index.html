@@ -1,45 +1,51 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Prompt example</title>
-	<style>
-		html,
-        head {
-            padding: 0; margin:0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt example</title>
+  <style>
+    html,
+    head {
+      padding: 0;
+      margin: 0;
+    }
 
-        body {
-			font-family: "San Francisco", "Helvetica Neue", Arial, sans-serif;
-            font-size: 1.4rem;
-            max-width: 480px;
-            padding: 2rem;
-            margin: 0 auto;
-		}
+    body {
+      font-family: "San Francisco", "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.4rem;
+      max-width: 480px;
+      padding: 2rem;
+      margin: 0 auto;
+    }
 
-        button {
-            border: 3px solid #000;
-            background: #fff;
-            font-size: 1.4rem;
-            padding: 1rem;
-        }
+    button {
+      border: 3px solid #000;
+      background: #fff;
+      font-size: 1.4rem;
+      padding: 1rem;
+    }
 
-        button:hover {
-            background: #000;
-            color: #fff;
-        }
-	</style>
+    button:hover {
+      background: #000;
+      color: #fff;
+    }
+
+  </style>
 </head>
-<body>
-	<script src="app.js"></script>
-	<script>
-	    var app = Elm.Main.fullscreen();
 
-        app.ports.prompt.subscribe(function (message) {
-            var userInput = prompt(message);
-            app.ports.userInput.send(userInput ? userInput : null);
-        });
-	</script>
+<body>
+  <script src="app.js"></script>
+  <script>
+    var app = Elm.Main.fullscreen();
+
+    app.ports.prompt.subscribe(function(message) {
+      var userInput = prompt(message);
+      app.ports.userInput.send(userInput ? userInput : null);
+    });
+
+  </script>
 </body>
+
 </html>
